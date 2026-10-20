@@ -1,4 +1,5 @@
-version: '3.8'
+include:
+  - path: ./extra.yaml
 
 services:
   frontend:
@@ -11,21 +12,13 @@ services:
       - app-network
     depends_on:
       - backend
-
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "${PORT}:${PORT}"
-    environment:
-      - PORT=${PORT}
-      - MONGO_URI=${MONGO_URI}
-    networks:
-      - app-network
-    depends_on:
-      database:
-        condition: service_healthy
+    develop:
+      watch:
+        - action: sync
+          path: ./frontend/src/index.html
+          target: /usr/share/nginx/html/index.html
+        - action: rebuild
+          path: ./frontend/Dockerfile
 
   database:
     image: mongo:latest
