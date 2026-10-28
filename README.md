@@ -47,7 +47,7 @@ MONGO_URI=mongodb://admin:supersecurepassword@database:27017/mydb?authSource=adm
 
 🚀 Getting Started
 1. Clone Repository
-git clone https://github.com/aadityapalsagwan/docker-multi-tier-app.git
+git clone https://github.com/Sajjadkhan21/Multi-Tier-containerized-web-stack
 
 cd docker-multi-tier-app
 2. Build Containers
