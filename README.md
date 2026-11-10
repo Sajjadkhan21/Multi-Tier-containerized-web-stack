@@ -50,11 +50,14 @@ MONGO_URI=mongodb://admin:supersecurepassword@database:27017/mydb?authSource=adm
 git clone https://github.com/Sajjadkhan21/Multi-Tier-containerized-web-stack
 
 cd docker-multi-tier-app
+
 2. Build Containers
 docker compose build
-3. Start Application
+
+4. Start Application
 docker compose up -d
-4. Verify Running Containers
+
+6. Verify Running Containers
 docker compose ps
 View logs:
 
